@@ -18,6 +18,7 @@
 		810CA66B2B2906F000A23030 /* StartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810CA66A2B2906F000A23030 /* StartView.swift */; };
 		819A8F612B29FFAF002770AA /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819A8F602B29FFAF002770AA /* SettingsView.swift */; };
 		819A8F632B2A0055002770AA /* DataSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819A8F622B2A0055002770AA /* DataSettings.swift */; };
+		819A8F662B2A0EE4002770AA /* AlertKit in Frameworks */ = {isa = PBXBuildFile; productRef = 819A8F652B2A0EE4002770AA /* AlertKit */; };
 		81C7DE1D2B29F0AA009D88DB /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C7DE1C2B29F0AA009D88DB /* DataManager.swift */; };
 		81C7DE202B29F4A8009D88DB /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C7DE1F2B29F4A8009D88DB /* MainView.swift */; };
 /* End PBXBuildFile section */
@@ -54,6 +55,7 @@
 		810CA66A2B2906F000A23030 /* StartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartView.swift; sourceTree = "<group>"; };
 		819A8F602B29FFAF002770AA /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		819A8F622B2A0055002770AA /* DataSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSettings.swift; sourceTree = "<group>"; };
+		81C17EEB2B2A1FE6003DDF5F /* Universal-application-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Universal-application-Info.plist"; sourceTree = SOURCE_ROOT; };
 		81C7DE1C2B29F0AA009D88DB /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		81C7DE1F2B29F4A8009D88DB /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -63,6 +65,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				819A8F662B2A0EE4002770AA /* AlertKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -106,6 +109,7 @@
 		810CA63A2B29054C00A23030 /* Universal application */ = {
 			isa = PBXGroup;
 			children = (
+				81C17EEB2B2A1FE6003DDF5F /* Universal-application-Info.plist */,
 				810CA63B2B29054C00A23030 /* Universal_applicationApp.swift */,
 				810CA6672B29058000A23030 /* View */,
 				810CA63F2B29054D00A23030 /* Assets.xcassets */,
@@ -177,6 +181,9 @@
 			dependencies = (
 			);
 			name = "Universal application";
+			packageProductDependencies = (
+				819A8F652B2A0EE4002770AA /* AlertKit */,
+			);
 			productName = "Universal application";
 			productReference = 810CA6382B29054C00A23030 /* Universal application.app */;
 			productType = "com.apple.product-type.application";
@@ -249,6 +256,9 @@
 				Base,
 			);
 			mainGroup = 810CA62F2B29054C00A23030;
+			packageReferences = (
+				819A8F642B2A0EE4002770AA /* XCRemoteSwiftPackageReference "SPAlert" */,
+			);
 			productRefGroup = 810CA6392B29054C00A23030 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -462,14 +472,16 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Universal application/Preview Content\"";
-				DEVELOPMENT_TEAM = 8UJ348LDS3;
+				DEVELOPMENT_TEAM = KHVLL8F288;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Universal-application-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -477,9 +489,13 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Kozhemyakin.Universal-application";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -491,14 +507,16 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Universal application/Preview Content\"";
-				DEVELOPMENT_TEAM = 8UJ348LDS3;
+				DEVELOPMENT_TEAM = KHVLL8F288;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Universal-application-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -506,9 +524,13 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Kozhemyakin.Universal-application";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -628,6 +650,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		819A8F642B2A0EE4002770AA /* XCRemoteSwiftPackageReference "SPAlert" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ivanvorobei/SPAlert";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.1.8;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		819A8F652B2A0EE4002770AA /* AlertKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 819A8F642B2A0EE4002770AA /* XCRemoteSwiftPackageReference "SPAlert" */;
+			productName = AlertKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 810CA6302B29054C00A23030 /* Project object */;
 }

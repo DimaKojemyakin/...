@@ -29,6 +29,7 @@ struct MainView: View {
             .sheet(isPresented: $isActiveSheetSettings) {
                 Settings()
             }
+            .navigationBarBackButtonHidden(false)
         }
         
     }

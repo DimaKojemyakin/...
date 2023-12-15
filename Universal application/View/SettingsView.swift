@@ -6,13 +6,13 @@
 //
 
 import SwiftUI
+import AlertKit
 
 struct Settings: View {
     @EnvironmentObject var userManager: UserManager
     @EnvironmentObject var dataSettings: DataSettings
     @EnvironmentObject var dataManager: DataManager
     @State private var isActiveAlert = false
-    @State private var isActiveAlert2 = false
     
     
     var body: some View {
@@ -31,8 +31,15 @@ struct Settings: View {
                         .alert("Do you really want to get out?", isPresented: $isActiveAlert) {
                             Button("Ok", role: .destructive) {
                                 settings() // Вызываем метод settings() при нажатии кнопки "Ok"
+                                AlertKitAPI.present(
+                                    title: "Log out",
+                                    icon: .done,
+                                    style: .iOS16AppleMusic,
+                                    haptic: .success
+                                )
+                                
                             }
-                            .SPA
+                            
                             Button("Cancel", role: .cancel) { }
                         }
                        
